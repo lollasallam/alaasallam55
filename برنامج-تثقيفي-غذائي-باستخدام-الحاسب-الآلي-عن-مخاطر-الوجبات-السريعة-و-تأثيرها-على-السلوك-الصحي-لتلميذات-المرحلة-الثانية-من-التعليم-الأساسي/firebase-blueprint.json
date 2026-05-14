@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "Interaction": {
+      "title": "Interaction",
+      "description": "An interaction logged by a user in the app",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "themeId": { "type": "string" },
+        "action": { "type": "string" },
+        "timestamp": { "type": "number" }
+      },
+      "required": ["userId", "themeId", "action", "timestamp"]
+    }
+  },
+  "firestore": {
+    "interactions/{interactionId}": {
+      "schema": { "$ref": "#/entities/Interaction" },
+      "description": "Logs of user interactions."
+    }
+  }
+}
